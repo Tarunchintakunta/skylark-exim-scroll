@@ -51,7 +51,7 @@ Farmed route:
 | 13 | sea | hf-sail | `lab/live/desktop-pond/13-sea-down.jpg` · `13-sea-up.jpg` | `lab/live/mobile-pond/13-sea-down.jpg` · `13-sea-up.jpg` |
 | 14 | world | map | `lab/live/desktop-pond/14-world-down.jpg` · `14-world-up.jpg` | `lab/live/mobile-pond/14-world-down.jpg` · `14-world-up.jpg` |
 
-Contact sheets from the skill's `shoot.mjs` (live): `lab/shots/desktop/sheet.png`, `lab/shots/mobile/sheet.png`, `lab/shots/reduced/sheet.png`. Sub-pages at both sizes: `lab/live/pages/`.
+Contact sheets from the skill's `shoot.mjs` (live): `lab/sheets/shoot-desktop.jpg`, `lab/sheets/shoot-mobile.jpg`, `lab/sheets/shoot-reduced.jpg` (logs: `lab/shots-*.log`). Sub-pages at both sizes: `lab/live/pages/`.
 
 ## Verification on the live URL
 | Check | Result |
