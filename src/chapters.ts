@@ -101,8 +101,9 @@ const SHARED_END: Chapter[] = [
     caps: [{ title: 'Loaded in reefer containers.', body: 'Shipped cold, so the chain holds all the way to the destination.', at: [0.06, 0.94] }],
   },
   {
-    id: 'sea', station: 'Sea', span: 2.0, clips: [c('hf-sail')],
-    caps: [{ title: 'Then it sails.', body: 'From Visakhapatnam, out to the markets that order it.', at: [0.3, 0.9] }],
+    // hf-sail was dropped: a tug runs alongside the container ship in every frame (one vessel per shot)
+    id: 'sea', station: 'Sea', span: 2.0, clips: [c('hf-depart')],
+    caps: [{ title: 'Out past the breakwater.', body: 'From Visakhapatnam, out to the markets that order it.', at: [0.3, 0.9] }],
   },
   { id: 'world', station: 'World', span: 1.0, clips: [], caps: [] },
 ]

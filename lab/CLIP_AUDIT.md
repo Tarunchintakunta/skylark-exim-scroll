@@ -27,4 +27,4 @@ Strips: `lab/audit/g1.jpg` … `g6.jpg` (6 evenly spaced frames per clip, first 
 | hf-port-5 | **DROPPED** | Contains a jump cut (crane close-up to aerial) |
 | hf-cranes | KEEP | One ship at the quay |
 | hf-ship | **DROPPED** | v3 audit (FINAL_REPORT): stern placard with pseudo-lettering, i.e. text-like artefact |
-| hf-sail | KEEP (peak) | One ship alone, forward |
+| hf-sail | **DROPPED** (after first release) | A tug runs alongside the container ship's port side in every frame; it is attached to the hull, so no crop isolates the ship. Replaced in the Sea chapter by hf-depart (one boat, all 40 frames checked: `lab/sail/hf-depart-d.jpg`) |
