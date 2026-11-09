@@ -10,3 +10,5 @@ lab/tmp/
 .DS_Store
 *.log
 !lab/audit/g*.jpg
+lab/walk-*/
+lab/shots*/

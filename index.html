@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skylark Exim · Seafood exporter, Visakhapatnam</title>
+<meta name="description" content="Skylark Exim exports raw fresh, chilled and frozen seafood from Visakhapatnam, Andhra Pradesh. Follow one shipment from the boat to the port.">
+<link rel="canonical" href="https://skylark-exim-scroll.vercel.app/">
+<meta property="og:title" content="Skylark Exim · From the boat to your port, kept cold">
+<meta property="og:description" content="Seafood exporter in Visakhapatnam. Raw fresh, chilled and frozen seafood, shipped to 15 markets.">
+<meta property="og:image" content="https://skylark-exim-scroll.vercel.app/og.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0f12">
+<link rel="icon" href="/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/inter-tight-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="/media/hero/plate-d.webp" media="(min-aspect-ratio: 4/5)" fetchpriority="high">
+<link rel="preload" as="image" href="/media/hero/plate-m.webp" media="(max-aspect-ratio: 4/5)" fetchpriority="high">
+</head>
+<body class="page-story">
+<a class="skip" href="#track">Skip to the story</a>
+
+<header class="bar">
+  <a class="bar__mark" href="/" aria-label="Skylark Exim, home"><img src="/logo-128.webp" width="40" height="40" alt=""><span>Skylark Exim</span></a>
+  <nav class="bar__nav" aria-label="Site">
+    <a href="/products">Products</a><a href="/about">About</a><a href="/news">News</a>
+  </nav>
+  <a class="btn btn--accent bar__cta" href="/contact">Request a quote</a>
+</header>
+
+<div class="stage">
+  <canvas id="film" aria-hidden="true"></canvas>
+  <div class="hero" data-sc-cue="0 0.6 0">
+    <picture class="plane" data-depth="0.25"><source media="(max-aspect-ratio: 4/5)" srcset="/media/hero/plate-m.webp"><img src="/media/hero/plate-d.webp" alt="" fetchpriority="high"></picture>
+    <picture class="plane" data-depth="0.12"><source media="(max-aspect-ratio: 4/5)" srcset="/media/hero/far-m.webp"><img src="/media/hero/far-d.webp" alt=""></picture>
+    <div class="hero__haze hero__haze--far" aria-hidden="true"></div>
+    <div class="hero__type plane" data-depth="0.3">
+      <h1 class="hero__title"><span class="ln"><span>From the boat to your port,</span></span> <span class="ln"><span>kept cold.</span></span></h1>
+    </div>
+    <picture class="plane plane--boat" data-depth="0.45"><source media="(max-aspect-ratio: 4/5)" srcset="/media/hero/boat-m.webp"><img src="/media/hero/boat-d.webp" alt=""></picture>
+    <picture class="plane plane--quay" data-depth="1"><source media="(max-aspect-ratio: 4/5)" srcset="/media/hero/quay-m.webp"><img src="/media/hero/quay-d.webp" alt=""></picture>
+    <div class="hero__haze hero__haze--near" aria-hidden="true"></div>
+    <div class="hero__scrim" aria-hidden="true"></div>
+    <div class="hero__copy">
+      <p class="hero__body" data-route-copy="sea">Skylark Exim exports raw fresh, chilled and frozen seafood from Visakhapatnam, Andhra Pradesh.</p>
+      <p class="hero__body" data-route-copy="pond">Vannamei and Black Tiger shrimp from partner farms, processed and frozen in Visakhapatnam.</p>
+      <a class="btn btn--accent" href="/contact">Request a quote</a>
+    </div>
+  </div>
+  <div class="scrim" aria-hidden="true"></div>
+</div>
+
+<nav class="route" aria-label="Story route"></nav>
+
+<main id="track"></main>
+
+<section class="world" aria-labelledby="world-title">
+  <div class="world__map" aria-hidden="true">
+    <svg class="world__arcs" viewBox="0 0 1000 441" preserveAspectRatio="xMidYMid slice"></svg>
+  </div>
+  <div class="world__scrim" aria-hidden="true"></div>
+  <div class="world__copy" data-sc-cue="0.15">
+    <h2 id="world-title" class="world__title">Trusted in <span class="num" data-to="15">15</span> markets.</h2>
+    <ul class="world__list"></ul>
+    <p class="world__ask">Tell us the species, the form and the port. We reply with a quote.</p>
+    <div class="world__actions">
+      <a class="btn btn--accent" href="/contact">Request a quote</a>
+      <a class="btn btn--ghost" href="mailto:info@skylarkexim.com">info@skylarkexim.com</a>
+    </div>
+    <p class="world__foot">Skylark Exim · Sheela Nagar, Visakhapatnam, Andhra Pradesh · <a href="tel:+919000604070">+91 90006 04070</a> · <a href="/products">Products</a> · <a href="/about">About</a> · <a href="/news">News</a></p>
+  </div>
+</section>
+
+<noscript><style>.stage,.route{display:none}</style><p class="noscript">The story needs JavaScript to play. <a href="/products">Products</a> · <a href="/about">About</a> · <a href="/contact">Request a quote</a></p></noscript>
+<script type="module" src="/src/story.ts"></script>
+</body>
+</html>
