@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"cd \\\"/Users/tarunchintakunta/Desktop/skylark 2/lab/walk-desktop\\\" && ls | head -30; ffmpeg -v error -y -i 00-first-screen.png -i 02-catch-down.png -i 04-plant-down.png -i 07-cold-down.png ...",
-  "error": "Exit code 234\n00-first-screen.png\n01-harbour-down.png\n01-harbour-up.png\n02-catch-down.png\n02-catch-up.png\n03-ice-down.png\n03-ice-up.png\n04-plant-down.png\n04-plant-up.png\n05-wash-down.png\n05-wash-up.png\n06-cut-down.png\n06-cut-up.png\n07-cold-down.png\n07-cold-up.png\n08-papers-down.png\n08-papers-up.png\n09-port-down.png\n09-port-up.png\n10-sea-down.png\n10-sea-up.png\n11-world-down.png\n11-world-up.png\nwalk.json\n[AVFilterGraph @ 0x7c6ac1c000] More input link labels specified for filter 'vstack' than it ha...",
-  "timestamp": "2026-11-09T06:15:54.359Z",
-  "retry_count": 2
-}

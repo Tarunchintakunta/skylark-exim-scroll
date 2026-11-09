@@ -12,3 +12,6 @@ lab/tmp/
 !lab/audit/g*.jpg
 lab/walk-*/
 lab/shots*/
+.vercel
+.env*
+.omc/
