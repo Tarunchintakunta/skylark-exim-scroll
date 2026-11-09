@@ -34,7 +34,9 @@ if (form) {
       val('message'),
     ].join('\n')
     const subject = `Quote request: ${products}${val('company') ? ` (${val('company')})` : ''}`
-    location.href = `mailto:info@skylarkexim.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    const url = `mailto:info@skylarkexim.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    form.dataset.mailto = url // read back by the verification pass
+    location.href = url
     const note = document.querySelector<HTMLElement>('#quote-note')
     if (note) { note.hidden = false; note.focus() }
   })

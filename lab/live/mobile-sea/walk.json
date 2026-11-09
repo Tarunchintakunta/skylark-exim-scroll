@@ -1,0 +1,22 @@
+{
+  "url": "https://skylark-exim-scroll.vercel.app",
+  "route": "sea",
+  "viewport": "390x844",
+  "chapters": 11,
+  "seconds": 23.666,
+  "frames": 1098,
+  "frameMs": {
+    "p50": "16.7",
+    "p95": "16.8",
+    "p99": "283.4",
+    "max": "416.7"
+  },
+  "over20ms": 21,
+  "stats": {
+    "need": 1112,
+    "miss": 223,
+    "blank": 0
+  },
+  "errors": [],
+  "failed": []
+}

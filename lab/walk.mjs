@@ -5,7 +5,7 @@ import { chromium } from 'playwright-core'
 import fs from 'node:fs'
 const a = (n, d) => { const i = process.argv.indexOf(n); return i > -1 ? process.argv[i + 1] : d }
 const URL0 = a('--url', 'http://localhost:4600'), OUT = a('--out', 'lab/walk'), W = +a('--width', 1440), H = +a('--height', 900)
-const MOBILE = process.argv.includes('--mobile'), ROUTE = a('--route', 'sea')
+const MOBILE = process.argv.includes('--mobile'), ROUTE = a('--route', 'sea'), STEP_MS = +a('--step-ms', 40)
 fs.mkdirSync(OUT, { recursive: true })
 const browser = await chromium.launch({ executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', args: ['--disable-gpu-vsync'] })
 const ctx = await browser.newContext({ viewport: { width: W, height: H }, deviceScaleFactor: MOBILE ? 3 : 1, isMobile: MOBILE, hasTouch: MOBILE })
@@ -28,7 +28,7 @@ async function wheelTo(y) {
   for (let i = 0; i < steps; i++) {
     if (MOBILE) await page.evaluate((d) => scrollBy(0, d), Math.sign(y - cur) * 100)
     else await page.mouse.wheel(0, Math.sign(y - cur) * 100)
-    await page.waitForTimeout(16)
+    await page.waitForTimeout(STEP_MS)
   }
   await page.evaluate((y) => scrollTo(0, y), y)
 }

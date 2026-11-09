@@ -46,7 +46,7 @@ const OPEN_SEA: Chapter[] = [
     id: 'cold', station: 'Cold', span: 1.3, clips: [c('hf-fish-freeze'), c('hf-store')], side: 'trail',
     caps: [
       { title: 'Frozen at its best.', body: 'IQF or block freezing, then a thin glaze of ice to protect it during shipment.', at: [0.04, 0.44] },
-      { title: 'Held at −18 °C to −20 °C.', body: 'Cold rooms until dispatch.', at: [0.42, 0.96], extra: 'count700' },
+      { title: 'Held at −18\u00a0°C to −20\u00a0°C.', body: 'Cold rooms until dispatch.', at: [0.42, 0.96], extra: 'count700' },
     ],
   },
 ]
@@ -87,7 +87,7 @@ const OPEN_POND: Chapter[] = [
   },
   {
     id: 'cold', station: 'Cold', span: 0.9, clips: [c('hf-store')], side: 'trail',
-    caps: [{ title: 'Held at −18 °C to −20 °C.', body: 'Cold rooms until dispatch.', at: [0.08, 0.92], extra: 'count700' }],
+    caps: [{ title: 'Held at −18\u00a0°C to −20\u00a0°C.', body: 'Cold rooms until dispatch.', at: [0.08, 0.92], extra: 'count700' }],
   },
 ]
 

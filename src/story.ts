@@ -124,28 +124,34 @@ const stats = { need: 0, miss: 0, blank: 0 }
 const pending = new Set<string>()
 let queue: string[] = []
 
-/** coarse to fine: every 8th frame first, then 4th, 2nd, then the rest, so a fast scroll on a cold cache still moves */
-function order(n: number) {
-  const out: number[] = []; const seen = new Set<number>()
-  for (const step of [8, 4, 2, 1]) for (let i = 0; i < n; i += step) if (!seen.has(i)) { seen.add(i); out.push(i) }
-  if (!seen.has(n - 1)) out.push(n - 1)
+/** frame indices of one clip at a given coarseness (every `step`th frame, always including the last) */
+function every(n: number, step: number) {
+  const out: number[] = []
+  for (let i = 0; i < n; i += step) out.push(i)
+  if (out[out.length - 1] !== n - 1) out.push(n - 1)
   return out
 }
-function chapterUrls(i: number) {
+function chapterUrls(i: number, step: number) {
   const ch = chapters[i]; if (!ch) return []
   if (ch.still) return [posterFor(ch)]
-  return ch.clips.flatMap((cl) => order(cl.frames).map((k) => frameUrl(cl.id, k)))
+  return ch.clips.flatMap((cl) => every(cl.frames, step).map((k) => frameUrl(cl.id, k)))
 }
 let queuedFor = -1
+/**
+ * Priority, coarse to fine so a fast scroll on a cold cache always has a nearby real frame:
+ * current + next chapter every 8th frame, then every 4th (+ the chapter behind), then every frame,
+ * then the rest of the route outward, again coarse before fine.
+ */
 function queueAll(cur = chapterAt(scrollY / vh)) {
   queuedFor = cur
-  // current and next first (the owner's rule), then the one behind, then everything else outward
-  const ix = [cur, cur + 1, cur - 1, cur + 2, cur + 3, cur - 2, ...chapters.map((_, i) => i)]
+  const near = [cur, cur + 1]
+  const rest = chapters.map((_, i) => i).filter((i) => !near.includes(i)).sort((a, b) => Math.abs(a - cur) - Math.abs(b - cur) || b - a)
+  const tiers: [number[], number][] = [[near, 8], [[...near, cur - 1], 4], [[...near, cur - 1], 2], [[...near, cur - 1], 1], [rest, 8], [rest, 4], [rest, 1]]
   const seen = new Set<string>(); queue = []
-  for (const i of ix) for (const u of chapterUrls(i)) if (!seen.has(u) && !cache.has(u)) { seen.add(u); queue.push(u) }
+  for (const [ix, step] of tiers) for (const i of ix) for (const u of chapterUrls(i, step)) if (!seen.has(u) && !cache.has(u)) { seen.add(u); queue.push(u) }
   pump()
 }
-const MAX = 8
+const MAX = 10
 function pump() {
   while (pending.size < MAX && queue.length) {
     const u = queue.shift()!
@@ -180,7 +186,7 @@ function shotsFor(i: number, p: number): { a: Shot; b?: Shot; mix: number } {
   const ch = chapters[i]
   if (ch.still) {
     const img = cache.get(posterFor(ch)) ?? null
-    return { a: { img, key: `s${i}`, scale: 1.02 + 0.06 * p }, mix: 0 }
+    return { a: { img, key: `s${i}:${Math.round(p * 400)}`, scale: 1.02 + 0.06 * p }, mix: 0 }
   }
   if (!ch.clips.length) return { a: { ...shotsFor(i - 1, 1).a }, mix: 0 } // the world holds the ship's last frame under the map
   let q = p
