@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd \\\"/Users/tarunchintakunta/Desktop/skylark 2\\\" && sed -i '' \\\"s/,drawtext=[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,[^,]*,/,/\\\" lab/audit/sheet.sh && grep vf lab/audit/sheet.sh && ./lab/audit/sheet....",
+  "error": "Exit code 1\n  ffmpeg -v error -y -i \"$f\" -vf \"select='not(mod(n\\,$step))',scale=400:-2,drawtext=text='$id':x=8:y=8:fontsize=20:fontcolor=yellow:box=1:boxcolor=black,tile=6x1\" -frames:v 1 lab/audit/$id.jpg\n[AVFilterGraph @ 0x76c503c180] No such filter: 'drawtext'\nError opening output file lab/audit/hf-port-5.jpg.\nError opening output files: Filter not found\n(eval):1: no matches found: *.jpg\n       0\n[in#0 @ 0x78dac28000] Error opening input: No such file or directory\nError opening input file open...",
+  "timestamp": "2026-11-09T05:55:31.451Z",
+  "retry_count": 1
+}
