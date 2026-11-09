@@ -41,7 +41,7 @@ reusing: a grammar, a nav treatment, a close pattern, a signature move, an
 act-count-and-length band. The shared columns are what the next build inherits
 as a constraint, so writing them down is the whole point.
 
-Nothing is taken yet.
+- Continuous world via fixed canvas frame sequences; forked route rail as nav; world-map close (skylark-exim-scroll).
 
 ---
 
@@ -63,3 +63,5 @@ If you want to see what a filled-in table looks like, and which shapes tend to
 collide, read `EXAMPLES.md` in the scroll-craft repository. Treat it as
 illustration only: those rows are somebody else's builds and they do **not**
 constrain yours.
+
+| skylark-exim-scroll | Continuous world (frame-sequence variant: fixed canvas, flow markers, verify-state) | Route map as nav: forked Sea/Pond origins merging at the plant, stations stamped and clickable; bottom strip on phones | Four planes cut from chapter 1's first frame (sky, plate, boat, quay) with the headline between sky and boat; dolly apart, then hand to the scrub | 11 waypoints (sea) / 14 (pond), 13.6 / 15.2 vh: planes > 7 scrubs > still > 2 scrubs > map close | Arrival in the world map: 15 markets drawn from Visakhapatnam, quote CTA and contact inside the map | Forked cold-chain route rail you can re-route | Natural documentary (supplied footage) | Vercel |

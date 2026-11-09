@@ -16,10 +16,10 @@ Repo: https://github.com/Tarunchintakunta/skylark-exim-scroll
 - Local walk down + up, desktop 1440x900 and mobile 390x844: 0 missed frames, p95 16.8 ms, 0 console errors.
 - Deployed to Vercel production.
 
+- Live verification: shoot.mjs (desktop/mobile/reduced), down+up walks on both routes at 1440x900 and 390x844, Lighthouse mobile on every page, links, form. Fixes redeployed and re-verified. See REPORT.md.
+
 ## Next
-- Verify on the live URL: walk every chapter down and up (desktop + mobile, cold), shoot.mjs contact sheets, Lighthouse mobile, links.
-- Fix findings, redeploy, re-verify. Write REPORT.md.
+- Nothing blocking. Open items are listed in REPORT.md ("Still open").
 
 ## Blockers
-- Vercel CLI bulk upload (250 MB) timed out with "fetch failed"; solved by uploading the frame folders in batches (Vercel dedupes files), then one --prod deploy.
-- The v3 Vercel team (tarun-44555f1b) is not on this CLI login; the new project lives in the logged-in scope miyoglobal1.
+- None now. Vercel CLI bulk upload kept failing ("fetch failed"), so the frames were uploaded in batches. The v3 Vercel team is not on this CLI login, so the project is in scope miyoglobal1.

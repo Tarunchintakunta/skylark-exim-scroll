@@ -139,14 +139,14 @@ function chapterUrls(i: number, step: number) {
 let queuedFor = -1
 /**
  * Priority, coarse to fine so a fast scroll on a cold cache always has a nearby real frame:
- * current + next chapter every 8th frame, then every 4th (+ the chapter behind), then every frame,
- * then the rest of the route outward, again coarse before fine.
+ * current + next chapter every 8th then 4th frame, then every 8th frame of the whole route (so no clip is ever
+ * empty), then every frame near the reader, then the rest of the route outward, coarse before fine.
  */
 function queueAll(cur = chapterAt(scrollY / vh)) {
   queuedFor = cur
   const near = [cur, cur + 1]
   const rest = chapters.map((_, i) => i).filter((i) => !near.includes(i)).sort((a, b) => Math.abs(a - cur) - Math.abs(b - cur) || b - a)
-  const tiers: [number[], number][] = [[near, 8], [[...near, cur - 1], 4], [[...near, cur - 1], 2], [[...near, cur - 1], 1], [rest, 8], [rest, 4], [rest, 1]]
+  const tiers: [number[], number][] = [[near, 8], [near, 4], [rest, 8], [[...near, cur - 1], 2], [[...near, cur - 1], 1], [rest, 4], [rest, 2], [rest, 1]]
   const seen = new Set<string>(); queue = []
   for (const [ix, step] of tiers) for (const i of ix) for (const u of chapterUrls(i, step)) if (!seen.has(u) && !cache.has(u)) { seen.add(u); queue.push(u) }
   pump()

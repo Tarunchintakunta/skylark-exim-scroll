@@ -21,7 +21,7 @@ await page.waitForTimeout(400)
 await page.screenshot({ path: `${OUT}/00-first-screen.png` })
 const chs = await page.evaluate(() => [...document.querySelectorAll('section.ch')].map((s) => ({ id: s.id, top: s.offsetTop, h: s.offsetHeight })))
 // frame timing probe
-await page.evaluate(() => { const w = window; w.__ft = []; let t = performance.now(); const f = (n) => { w.__ft.push(n - t); t = n; requestAnimationFrame(f) }; requestAnimationFrame(f) })
+await page.evaluate(() => { const w = window; w.__ft = []; let t = performance.now(); const f = (n) => { if (!w.__pause && !w.__skip) w.__ft.push(n - t); w.__skip = w.__pause; t = n; requestAnimationFrame(f) }; requestAnimationFrame(f) })
 async function wheelTo(y) {
   const cur = await page.evaluate(() => scrollY)
   const steps = Math.ceil(Math.abs(y - cur) / 100)
@@ -39,7 +39,9 @@ async function shotAll(dir, list) {
     await page.waitForTimeout(260)
     const st = await page.evaluate(() => ({ s: document.querySelector('.stage').dataset.scVerifyState, sc: { ...window.__sc.stats } }))
     const name = `${String(k + 1).padStart(2, '0')}-${c.id}-${dir}.png`
+    await page.evaluate(() => { window.__pause = true })
     await page.screenshot({ path: `${OUT}/${name}` })
+    await page.evaluate(() => { window.__pause = false })
     console.log(`${dir.padEnd(4)} ${name.padEnd(28)} state=${st.s} miss=${st.sc.miss}/${st.sc.need} blank=${st.sc.blank}`)
   }
 }

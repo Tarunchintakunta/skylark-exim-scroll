@@ -100,3 +100,21 @@ Deviation, stated: the engine's worldflight mode scrubs `<video>` legs through a
 | Route rail | signature move | Navigation that is the story |
 
 Families: parallax, kinetic, scrub, reveal, count, pointer. Six.
+
+## Feel check (after verification, cold, from the live contact sheets)
+
+| Act | Intended | Felt |
+|---|---|---|
+| Harbour | Stillness | Stillness: the planes part slowly, nothing else moves |
+| Catch | Effort | Effort |
+| Ice | Care | Care |
+| Plant | Arrival | Arrival (three clips read as one handover) |
+| Wash | Precision | Precision |
+| Cut | Craft | Precision again: wash and cut both read as "work at a steel table" |
+| Cold | Cold quiet | Cold quiet |
+| Papers | Order | Order, and a welcome pause |
+| Port | Scale | Scale |
+| Sea | Release (peak) | Release: the largest visual change on the sheet and the longest span |
+| World | Belonging, resolve | Resolve: the last screen holds with content and the CTA |
+
+Diff: Wash and Cut produced the same word. Changed: Cut keeps its span short (0.9 vh) and its copy anchor opposite to Wash so the two read as a turn, not a repeat. Not cut, because the owner listed processing as its own step.

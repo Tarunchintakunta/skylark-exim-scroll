@@ -132,7 +132,8 @@ contact = head('Request a quote · Skylark Exim', 'Request an export quote from 
     <p class="lede">Tell us what you need and where it is going. The form opens your own email app with the request written out, addressed to info@skylarkexim.com.</p>
   </div>
   <div class="contact">
-    <form id="quote-form" action="mailto:info@skylarkexim.com" method="post" enctype="text/plain">
+    <noscript><style>#quote-form{{display:none}}</style><p class="note">The form needs JavaScript to write the email for you. Send your request to <a href="mailto:info@skylarkexim.com">info@skylarkexim.com</a> or call <a href="tel:+919000604070">+91 90006 04070</a>.</p></noscript>
+    <form id="quote-form" method="post">
       <div class="row">
         <label>Name<input name="name" autocomplete="name" required></label>
         <label>Company<input name="company" autocomplete="organization"></label>
