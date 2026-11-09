@@ -18,6 +18,8 @@ Repo: https://github.com/Tarunchintakunta/skylark-exim-scroll
 
 - Live verification: shoot.mjs (desktop/mobile/reduced), down+up walks on both routes at 1440x900 and 390x844, Lighthouse mobile on every page, links, form. Fixes redeployed and re-verified. See REPORT.md.
 
+- 9 Nov: Sea chapter fixed (hf-sail had a tug alongside; it is now hf-ice-wake, a reframe of the boat under way). Redeployed and re-verified on live.
+
 ## Next
 - Nothing blocking. Open items are listed in REPORT.md ("Still open").
 

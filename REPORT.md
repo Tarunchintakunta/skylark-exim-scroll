@@ -29,7 +29,7 @@ Sea route:
 | 7 | cold | hf-fish-freeze (frames 0–43), hf-store | `lab/live/desktop-sea/07-cold-down.jpg` · `07-cold-up.jpg` | `lab/live/mobile-sea/07-cold-down.jpg` · `07-cold-up.jpg` |
 | 8 | papers | ph-docs-blur still | `lab/live/desktop-sea/08-papers-down.jpg` · `08-papers-up.jpg` | `lab/live/mobile-sea/08-papers-down.jpg` · `08-papers-up.jpg` |
 | 9 | port | hf-stuff, hf-port-3, hf-cranes | `lab/live/desktop-sea/09-port-down.jpg` · `09-port-up.jpg` | `lab/live/mobile-sea/09-port-down.jpg` · `09-port-up.jpg` |
-| 10 | sea | hf-sail | `lab/live/desktop-sea/10-sea-down.jpg` · `10-sea-up.jpg` | `lab/live/mobile-sea/10-sea-down.jpg` · `10-sea-up.jpg` |
+| 10 | sea | hf-ice-wake (hf-ice reframed: hull, wake, open water) | `lab/live/desktop-sea/10-sea-down.jpg` · `10-sea-up.jpg` | `lab/live/mobile-sea/10-sea-down.jpg` · `10-sea-up.jpg` |
 | 11 | world | map (earth texture + SVG routes) | `lab/live/desktop-sea/11-world-down.jpg` · `11-world-up.jpg` | `lab/live/mobile-sea/11-world-down.jpg` · `11-world-up.jpg` |
 
 Farmed route:
@@ -48,7 +48,7 @@ Farmed route:
 | 10 | cold | hf-store | `lab/live/desktop-pond/10-cold-down.jpg` · `10-cold-up.jpg` | `lab/live/mobile-pond/10-cold-down.jpg` · `10-cold-up.jpg` |
 | 11 | papers | ph-docs-blur still | `lab/live/desktop-pond/11-papers-down.jpg` · `11-papers-up.jpg` | `lab/live/mobile-pond/11-papers-down.jpg` · `11-papers-up.jpg` |
 | 12 | port | hf-stuff, hf-port-3, hf-cranes | `lab/live/desktop-pond/12-port-down.jpg` · `12-port-up.jpg` | `lab/live/mobile-pond/12-port-down.jpg` · `12-port-up.jpg` |
-| 13 | sea | hf-sail | `lab/live/desktop-pond/13-sea-down.jpg` · `13-sea-up.jpg` | `lab/live/mobile-pond/13-sea-down.jpg` · `13-sea-up.jpg` |
+| 13 | sea | hf-ice-wake (hf-ice reframed: hull, wake, open water) | `lab/live/desktop-pond/13-sea-down.jpg` · `13-sea-up.jpg` | `lab/live/mobile-pond/13-sea-down.jpg` · `13-sea-up.jpg` |
 | 14 | world | map | `lab/live/desktop-pond/14-world-down.jpg` · `14-world-up.jpg` | `lab/live/mobile-pond/14-world-down.jpg` · `14-world-up.jpg` |
 
 Contact sheets from the skill's `shoot.mjs` (live): `lab/sheets/shoot-desktop.jpg`, `lab/sheets/shoot-mobile.jpg`, `lab/sheets/shoot-reduced.jpg` (logs: `lab/shots-*.log`). Sub-pages at both sizes: `lab/live/pages/`.
@@ -90,6 +90,7 @@ Targets were met on every page: Perf ≥ 90, LCP ≤ 2.5 s, CLS ≤ 0.05, A11y �
 - **hf-unload-shrimp**: morphs mid-clip from the yard to an interior (not one shot).
 - **hf-port-4, hf-port-5**: jump cuts inside the clip.
 - **hf-ship**: pseudo-lettering on a stern placard (v3 audit), i.e. readable-text artefact.
+- **hf-sail** (dropped after the first release, rule break found in review): a tug runs alongside the container ship's port side in every frame. It is attached to the hull, so no crop can show the ship alone. First replaced by hf-depart, which repeated the Harbour quay shot. Now the Sea chapter (both routes) uses **hf-ice-wake**: hf-ice reframed to the boat's hull, its wake and open water, i.e. the boat under way at sea. All 40 frames were checked at desktop and phone size for a second vessel: none (`lab/sail/wake-d.jpg`, `lab/sail/wake-m.jpg`). Caption: "Under way." Note: on the sea route this is the same boat seen in the Ice chapter, reframed; on the farmed route it is new footage.
 - Not used, to keep chapters short: opening, hf-unload-fish, hf-port-1, hf-port-2. **hf-peel** is trimmed to frames 0–24 (after that the camera glides into the lab). **hf-fish-freeze** is trimmed to frames 0–43 (as in v3, the push-in later crops a face).
 
 ## Still open
@@ -100,3 +101,14 @@ Targets were met on every page: Perf ≥ 90, LCP ≤ 2.5 s, CLS ≤ 0.05, A11y �
 - **News** has no posts, because there is no real news source.
 - One large first commit holds all the media (about 250 MB). Later commits are small.
 - The fingerprint registry row was appended in `scrollcraft/FINGERPRINTS.md`. The feel-check diff is in BRIEF.md (Wash and Cut read alike; the copy anchors were alternated).
+
+## Re-verification after the hf-sail fix (9 Nov, live, new deployment)
+| Run (walk every chapter down then up, reading pace) | Frame p95 / max | Blank draws | Neighbour-frame draws | Console errors / failed requests |
+|---|---|---|---|---|
+| desktop sea 1440×900 | 16.8 / 50.0 ms | 0 | 318 / 2663 (12%) | 0 / 0 |
+| phone sea 390×844 | 16.7 / 16.8 ms | 0 | 271 / 2567 (11%) | 0 / 0 |
+| desktop pond 1440×900 | 16.8 / 33.4 ms | 0 | 219 / 3371 (6%) | 0 / 0 |
+| phone pond 390×844 | 16.8 / 16.8 ms | 0 | 274 / 3048 (9%) | 0 / 0 |
+
+The Sea chapter drew `hf-ice-wake` both down and up on all four runs (`lab/live/*/10-sea-*.jpg` and `13-sea-*.jpg`). No neighbour frames were drawn inside the Sea chapter. `shoot.mjs` desktop and mobile: no dead scroll, every cue clears 4.5:1. `/media/seq/hf-sail/*` now returns 404 (frames removed from the repo and the deploy).
+An earlier phone-pond run logged 10 `net::ERR_NETWORK_IO_SUSPENDED` errors. That was this machine's network suspending mid-run, not the site; the rerun above is clean.

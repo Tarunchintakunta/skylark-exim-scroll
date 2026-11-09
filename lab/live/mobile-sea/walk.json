@@ -3,18 +3,18 @@
   "route": "sea",
   "viewport": "390x844",
   "chapters": 11,
-  "seconds": 42.836,
-  "frames": 2043,
+  "seconds": 43.325,
+  "frames": 2049,
   "frameMs": {
     "p50": "16.7",
-    "p95": "16.8",
+    "p95": "16.7",
     "p99": "16.8",
     "max": "16.8"
   },
   "over20ms": 0,
   "stats": {
-    "need": 2566,
-    "miss": 361,
+    "need": 2567,
+    "miss": 271,
     "blank": 0
   },
   "errors": [],

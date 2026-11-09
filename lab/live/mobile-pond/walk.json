@@ -3,42 +3,20 @@
   "route": "pond",
   "viewport": "390x844",
   "chapters": 14,
-  "seconds": 51.536,
-  "frames": 2384,
+  "seconds": 50.847,
+  "frames": 2375,
   "frameMs": {
     "p50": "16.7",
     "p95": "16.8",
     "p99": "16.8",
-    "max": "33.4"
+    "max": "16.8"
   },
-  "over20ms": 3,
+  "over20ms": 0,
   "stats": {
-    "need": 3022,
-    "miss": 207,
+    "need": 3048,
+    "miss": 274,
     "blank": 0
   },
-  "errors": [
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED",
-    "Failed to load resource: net::ERR_NETWORK_IO_SUSPENDED"
-  ],
-  "failed": [
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/10.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/14.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/18.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/22.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/26.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/30.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/34.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-wash/m/38.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-arrive/m/27.avif net::ERR_NETWORK_IO_SUSPENDED",
-    "https://skylark-exim-scroll.vercel.app/media/seq/hf-arrive/m/29.avif net::ERR_NETWORK_IO_SUSPENDED"
-  ]
+  "errors": [],
+  "failed": []
 }

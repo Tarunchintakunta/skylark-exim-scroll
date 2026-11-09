@@ -3,18 +3,18 @@
   "route": "pond",
   "viewport": "1440x900",
   "chapters": 14,
-  "seconds": 52.027,
-  "frames": 2727,
+  "seconds": 51.871,
+  "frames": 2725,
   "frameMs": {
     "p50": "16.7",
     "p95": "16.8",
     "p99": "16.8",
     "max": "33.4"
   },
-  "over20ms": 20,
+  "over20ms": 17,
   "stats": {
-    "need": 3381,
-    "miss": 217,
+    "need": 3371,
+    "miss": 219,
     "blank": 0
   },
   "errors": [],

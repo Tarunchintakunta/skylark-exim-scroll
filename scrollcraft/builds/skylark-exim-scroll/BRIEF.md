@@ -50,7 +50,7 @@ Facts come only from the v3 files (`docs/CONTENT.md`, `FINAL_REPORT.md`, `src/co
 | 7 Frozen and held | Cold quiet | Rack into the freezer vapour, then the slow walk down the cold-store aisle |
 | 8 Paperwork | Order | A still desk, three short cards: documents, compliance, tracking |
 | 9 Loaded | Scale | Forklift to reefer, the spreader lifts the container, the crane over the ship |
-| 10 At sea | Release (PEAK) | One ship alone on deep water, the camera rising; the route line on the map runs out to sea |
+| 10 At sea | Release (PEAK) | The hull cutting open water, its wake running past under your hand (hf-ice-wake; hf-sail dropped: tug alongside) |
 | 11 The world | Belonging, resolve | Fifteen named markets light on a map from Visakhapatnam; the quote form is right there |
 
 Farmed path replaces acts 1 to 6 with: ponds (calm scale), the meter (trust), harvest (effort), intake (arrival), wash and grade (precision), peel (craft), lab (scrutiny), IQF (cold motion), pack (finish), then joins at the cold store.
@@ -118,3 +118,5 @@ Families: parallax, kinetic, scrub, reveal, count, pointer. Six.
 | World | Belonging, resolve | Resolve: the last screen holds with content and the CTA |
 
 Diff: Wash and Cut produced the same word. Changed: Cut keeps its span short (0.9 vh) and its copy anchor opposite to Wash so the two read as a turn, not a repeat. Not cut, because the owner listed processing as its own step.
+
+**Revision (9 Nov, after review):** hf-sail broke the one-vessel rule (a tug alongside in every frame). The peak now carries the boat under way (hf-ice-wake). It is quieter than the original ship-from-above shot, so the peak leans on the longest span and the busy port before it.
